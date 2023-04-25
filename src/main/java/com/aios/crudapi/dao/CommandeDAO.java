@@ -65,6 +65,8 @@ public class CommandeDAO {
     }
     
     public Commande saveCommande(Commande commande) {
+    	if(CommandesMap.containsKey(commande.getIdCommande()))
+    		return null;
         CommandesMap.put(commande.getIdCommande(), commande);
         return commande;
     }
